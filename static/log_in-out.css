@@ -1,0 +1,77 @@
+.body {
+  margin: 0 0 0 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.root {
+  display: flex;
+  flex-flow: column;
+  margin-top: 0;
+  background-color: #faff70;
+  height: 100%;
+}
+
+.main-header {
+  background-color: #2F242C;
+  height: 45px;
+  width: auto;
+  align-content: center;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 8px;
+}
+
+.controls {
+  display: flex;
+  align-content: flex-start;
+  width: 70%;
+}
+
+.auth {
+  display: flex;
+  align-content: flex-end;
+  width: 30%;
+  justify-content: flex-end;
+}
+
+.header-ul, .l2, .l1 {
+  display: flex;
+  color: #ffffff;
+  width: 100%;
+}
+
+.l1 {
+  justify-content: flex-start;
+}
+
+.l2 {
+  justify-content: flex-end;
+}
+
+.header-buttons {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+/*# sourceMappingURL=log_in-out.css.map */

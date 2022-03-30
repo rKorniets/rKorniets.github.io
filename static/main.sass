@@ -1,0 +1,136 @@
+@import "_colors", resolutions
+
+.body
+  margin: 0 0 0 0
+  height: 120%
+  width: 100%
+  position: absolute
+
+.root
+  display: flex
+  flex-flow: column
+  margin-top: 0
+  background-color: $app-background
+  height: 100%
+
+.main-header
+  background-color: $header-color
+  height: 45px
+  width: auto
+  align-content: center
+  margin-top: 5px
+  margin-left: 15px
+  margin-right: 15px
+  display: flex
+  justify-content: space-around
+  border-radius: 8px
+
+.controls
+  display: flex
+  align-content: flex-start
+  width: 70%
+
+.auth
+  display: flex
+  align-content: flex-end
+  width: 30%
+  justify-content: flex-end
+
+.header-ul
+  display: flex
+  color: $white
+  width: 100%
+
+.l1
+  @extend .header-ul
+  justify-content: flex-start
+
+.l2
+  @extend .header-ul
+  justify-content: flex-end
+
+.header-buttons
+  color: $white
+  text-decoration: none
+  font-family: Arial, sans-serif
+  margin-left: 2%
+  margin-right: 2%
+
+.main-content
+  display: flex
+  flex-wrap: wrap-reverse
+  flex-direction: row
+  box-sizing: border-box
+
+.box
+  display: flex
+  flex-flow: column
+  height: 100%
+
+%main-page-column
+  display: flex
+  flex-grow: 0
+  flex-shrink: 0
+  flex-basis: 44%
+  flex-wrap: wrap
+  padding-right: 3%
+  padding-left: 3%
+  height: auto
+  margin: auto
+
+.main-search
+  @extend %main-page-column
+  flex-direction: column
+
+.main-title
+  @extend %main-page-column
+
+.search-page-space
+  display: flex
+  height: 50%
+  flex-grow: 1
+
+.input-box
+  display: flex
+  width: fit-content
+  flex-basis: min-content
+  padding: 5px 5px 5px 5px
+  background-color: $shadow-color
+  margin: 0 auto
+  border-radius: 10px
+
+#search_by_name
+  font-size: medium
+  color: $text-color
+  border-radius: 8px
+
+#submit-button
+  margin: auto
+
+
+.event-search-caption
+  margin: auto auto 30px
+  font-family: Arial
+  font-size: xx-large
+
+.under-content
+  display: flex
+  flex-basis: available
+  height: available
+
+#search_form
+  display: flex
+
+  @include _800
+    flex-direction: column
+
+.footer
+  bottom: 0
+  margin-top: auto
+  background-color: $footer-color
+  display: flex
+  justify-content: center
+  p
+    color: $shadow-color
+
+
