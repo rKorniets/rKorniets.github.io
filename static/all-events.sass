@@ -1,4 +1,4 @@
-@import "_colors"
+@import "_colors", "_fonts"
 
 .body
   margin: 0 0 0 0
@@ -10,6 +10,15 @@
   margin-top: 0
   background-color: $app-background
   height: 100%
+  footer
+    bottom: 0
+    margin-top: auto
+    background-color: $footer-color
+    display: flex
+    justify-content: center
+    p
+      color: $shadow-color
+      font-family: Arial
 
 .main-header
   background-color: $header-color
@@ -59,38 +68,30 @@
   flex-wrap: wrap-reverse
   flex-direction: row
   box-sizing: border-box
+  margin-bottom: auto
 
-.box
-  display: flex
-  flex-flow: column
-  height: 100%
 .list-of-events-box
   display: flex
   margin: 5% auto auto
   flex-flow: column
-  ul
-    font-family: Arial Rounded MT Bold
+  width: 70%
+  h1
+    font-family: "Blogger Sans Medium"
     font-size: xxx-large
+    letter-spacing: .2rem
+  ul
+    font-family: "Blogger Sans Medium"
+    font-size: xxx-large
+    letter-spacing: .1rem
     li
       display: flex
       border-style: solid
       margin-top: 7px
       border-radius: 7px
       flex-direction: column
+      background-color: $button-color
       p
         margin-top: 10px
         margin-bottom: 10px
 
-.title
-  font-size: xxx-large
-  font-family: Arial Rounded MT Bold
-
-.footer
-  bottom: 0
-  margin-top: auto
-  background-color: $footer-color
-  display: flex
-  justify-content: center
-  p
-    color: $shadow-color
 

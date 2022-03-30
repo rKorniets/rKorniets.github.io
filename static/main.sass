@@ -1,10 +1,10 @@
-@import "_colors", resolutions
+@import "_colors", resolutions, "_fonts"
 
 .body
   margin: 0 0 0 0
-  height: 120%
+  display: flex
   width: 100%
-  position: absolute
+  height: 100vh
 
 .root
   display: flex
@@ -12,6 +12,15 @@
   margin-top: 0
   background-color: $app-background
   height: 100%
+  footer
+    bottom: 0
+    margin-top: auto
+    background-color: $footer-color
+    display: flex
+    justify-content: center
+    p
+      color: $shadow-color
+      font-family: Arial
 
 .main-header
   background-color: $header-color
@@ -55,17 +64,16 @@
   font-family: Arial, sans-serif
   margin-left: 2%
   margin-right: 2%
+  &:hover
+    text-decoration: underline
 
 .main-content
   display: flex
   flex-wrap: wrap-reverse
   flex-direction: row
   box-sizing: border-box
+  margin-bottom: 5%
 
-.box
-  display: flex
-  flex-flow: column
-  height: 100%
 
 %main-page-column
   display: flex
@@ -81,23 +89,43 @@
 .main-search
   @extend %main-page-column
   flex-direction: column
+  p
+    margin: auto auto 30px
+    font-family: "Blogger Sans Medium"
+    letter-spacing: .2rem
+    font-size: xx-large
+  div
+    display: flex
+    width: fit-content
+    flex-basis: min-content
+    padding: 5px 5px 5px 5px
+    background-color: $app-background-dark
+    margin: 0 auto
+    border-radius: 10px
 
 .main-title
   @extend %main-page-column
+  p
+    font-family: Arial
+  img
+    margin: auto
+    @include _480
+      height: 200px
+      width: 350px
+  div
+    display: flex
+    flex-flow: column
+    border-radius: 15px
+    padding-left: 3%
+    padding-right: 3%
+    background-color: $app-background-dark
+    margin-top: 5%
+    margin-bottom: 5%
 
 .search-page-space
   display: flex
   height: 50%
   flex-grow: 1
-
-.input-box
-  display: flex
-  width: fit-content
-  flex-basis: min-content
-  padding: 5px 5px 5px 5px
-  background-color: $shadow-color
-  margin: 0 auto
-  border-radius: 10px
 
 #search_by_name
   font-size: medium
@@ -108,29 +136,22 @@
   margin: auto
 
 
-.event-search-caption
-  margin: auto auto 30px
-  font-family: Arial
-  font-size: xx-large
-
 .under-content
   display: flex
-  flex-basis: available
   height: available
 
 #search_form
   display: flex
+  gap: 10px
+  label
+    font-family: Arial
+    font-size: medium
+    margin-top: auto
+    margin-bottom: auto
 
   @include _800
     flex-direction: column
 
-.footer
-  bottom: 0
-  margin-top: auto
-  background-color: $footer-color
-  display: flex
-  justify-content: center
-  p
-    color: $shadow-color
+
 
 

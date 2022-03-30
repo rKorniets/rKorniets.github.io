@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Blogger Sans Medium";
+  src: url("fonts/Blogger Sans-Medium.otf");
+}
 .body {
   margin: 0 0 0 0;
   width: 100%;
@@ -7,8 +11,19 @@
   display: flex;
   flex-flow: column;
   margin-top: 0;
-  background-color: #faff70;
+  background-color: #fff0a6;
   height: 100%;
+}
+.root footer {
+  bottom: 0;
+  margin-top: auto;
+  background-color: #545454;
+  display: flex;
+  justify-content: center;
+}
+.root footer p {
+  color: #ababab;
+  font-family: Arial;
 }
 
 .main-header {
@@ -64,22 +79,24 @@
   flex-wrap: wrap-reverse;
   flex-direction: row;
   box-sizing: border-box;
-}
-
-.box {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
+  margin-bottom: auto;
 }
 
 .list-of-events-box {
   display: flex;
   margin: 5% auto auto;
   flex-flow: column;
+  width: 70%;
+}
+.list-of-events-box h1 {
+  font-family: "Blogger Sans Medium";
+  font-size: xxx-large;
+  letter-spacing: 0.2rem;
 }
 .list-of-events-box ul {
-  font-family: Arial Rounded MT Bold;
+  font-family: "Blogger Sans Medium";
   font-size: xxx-large;
+  letter-spacing: 0.1rem;
 }
 .list-of-events-box ul li {
   display: flex;
@@ -87,26 +104,11 @@
   margin-top: 7px;
   border-radius: 7px;
   flex-direction: column;
+  background-color: #aed4e6;
 }
 .list-of-events-box ul li p {
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-.title {
-  font-size: xxx-large;
-  font-family: Arial Rounded MT Bold;
-}
-
-.footer {
-  bottom: 0;
-  margin-top: auto;
-  background-color: #545454;
-  display: flex;
-  justify-content: center;
-}
-.footer p {
-  color: #ababab;
 }
 
 /*# sourceMappingURL=all-events.css.map */

@@ -1,16 +1,31 @@
+@font-face {
+  font-family: "Blogger Sans Medium";
+  src: url("fonts/Blogger Sans-Medium.otf");
+}
 .body {
   margin: 0 0 0 0;
-  height: 120%;
+  display: flex;
   width: 100%;
-  position: absolute;
+  height: 100vh;
 }
 
 .root {
   display: flex;
   flex-flow: column;
   margin-top: 0;
-  background-color: #faff70;
+  background-color: #fff0a6;
   height: 100%;
+}
+.root footer {
+  bottom: 0;
+  margin-top: auto;
+  background-color: #545454;
+  display: flex;
+  justify-content: center;
+}
+.root footer p {
+  color: #ababab;
+  font-family: Arial;
 }
 
 .main-header {
@@ -60,18 +75,16 @@
   margin-left: 2%;
   margin-right: 2%;
 }
+.header-buttons:hover {
+  text-decoration: underline;
+}
 
 .main-content {
   display: flex;
   flex-wrap: wrap-reverse;
   flex-direction: row;
   box-sizing: border-box;
-}
-
-.box {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
+  margin-bottom: 5%;
 }
 
 .main-title, .main-search {
@@ -89,21 +102,49 @@
 .main-search {
   flex-direction: column;
 }
+.main-search p {
+  margin: auto auto 30px;
+  font-family: "Blogger Sans Medium";
+  letter-spacing: 0.2rem;
+  font-size: xx-large;
+}
+.main-search div {
+  display: flex;
+  width: fit-content;
+  flex-basis: min-content;
+  padding: 5px 5px 5px 5px;
+  background-color: #a69f6d;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.main-title p {
+  font-family: Arial;
+}
+.main-title img {
+  margin: auto;
+}
+@media (max-width: 480px) {
+  .main-title img {
+    height: 200px;
+    width: 350px;
+  }
+}
+.main-title div {
+  display: flex;
+  flex-flow: column;
+  border-radius: 15px;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: #a69f6d;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 
 .search-page-space {
   display: flex;
   height: 50%;
   flex-grow: 1;
-}
-
-.input-box {
-  display: flex;
-  width: fit-content;
-  flex-basis: min-content;
-  padding: 5px 5px 5px 5px;
-  background-color: #ababab;
-  margin: 0 auto;
-  border-radius: 10px;
 }
 
 #search_by_name {
@@ -116,36 +157,25 @@
   margin: auto;
 }
 
-.event-search-caption {
-  margin: auto auto 30px;
-  font-family: Arial;
-  font-size: xx-large;
-}
-
 .under-content {
   display: flex;
-  flex-basis: available;
   height: available;
 }
 
 #search_form {
   display: flex;
+  gap: 10px;
+}
+#search_form label {
+  font-family: Arial;
+  font-size: medium;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 @media (max-width: 800px) {
   #search_form {
     flex-direction: column;
   }
-}
-
-.footer {
-  bottom: 0;
-  margin-top: auto;
-  background-color: #545454;
-  display: flex;
-  justify-content: center;
-}
-.footer p {
-  color: #ababab;
 }
 
 /*# sourceMappingURL=main.css.map */
