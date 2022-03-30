@@ -94,6 +94,15 @@
   flex-direction: column;
   align-items: center;
   margin: auto auto auto auto;
+  border-radius: 9px;
+  background-color: #a69f6d;
+  padding: 25px 25px 25px 35px;
+}
+.login-box h1 {
+  color: #000000;
+  font-family: "Blogger Sans Medium";
+  font-size: xxx-large;
+  margin-top: 0;
 }
 .login-box form {
   display: flex;
@@ -115,14 +124,51 @@
   width: 60px;
   color: #ffffff;
   font-family: Arial, sans-serif;
-  font-size: 12px;
-  border-radius: 15px;
+  font-size: medium;
+  border-radius: 10px;
   color: #000000;
+  background-color: #ffffff;
 }
 @media (max-width: 480px) {
   .login-box form button {
     width: 100%;
   }
+}
+
+.registration-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto auto auto auto;
+  padding: 25px 25px 25px 25px;
+  border-radius: 15px;
+  background-color: #a69f6d;
+}
+.registration-box h1 {
+  color: #000000;
+  font-family: "Blogger Sans Medium";
+  font-size: xxx-large;
+  margin-top: 0;
+}
+.registration-box form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  align-self: center;
+}
+.registration-box form input {
+  height: 30px;
+}
+.registration-box form button {
+  height: 30px;
+  width: 100%;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: medium;
+  border-radius: 10px;
+  color: #000000;
+  background-color: #ffffff;
 }
 
 /*# sourceMappingURL=log_in-out.css.map */

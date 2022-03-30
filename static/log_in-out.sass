@@ -81,6 +81,14 @@
   flex-direction: column
   align-items: center
   margin: auto auto auto auto
+  border-radius: 9px
+  background-color: $app-background-dark
+  padding: 25px 25px 25px 35px
+  h1
+    color: $black
+    font-family: "Blogger Sans Medium"
+    font-size: xxx-large
+    margin-top: 0
   form
     display: flex
     flex-direction: row
@@ -99,9 +107,44 @@
       width: 60px
       color: $white
       font-family: Arial, sans-serif
-      font-size: 12px
+      font-size: medium
       @include _480
         width: 100%
 
-      border-radius: 15px
+      border-radius: 10px
       color: $black
+      background-color: $white
+
+.registration-box
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin: auto auto auto auto
+  padding: 25px 25px 25px 25px
+  border-radius: 15px
+  background-color: $app-background-dark
+  h1
+    color: $black
+    font-family: "Blogger Sans Medium"
+    font-size: xxx-large
+    margin-top: 0
+  form
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: 15px
+    align-self: center
+
+    input
+      height: 30px
+
+    button
+      height: 30px
+      width: 100%
+      color: $white
+      font-family: Arial, sans-serif
+      font-size: medium
+
+      border-radius: 10px
+      color: $black
+      background-color: $white
