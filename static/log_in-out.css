@@ -118,6 +118,7 @@
 }
 .login-box form input {
   height: 30px;
+  required: true;
 }
 .login-box form button {
   height: 30px;
@@ -159,6 +160,7 @@
 }
 .registration-box form input {
   height: 30px;
+  required: true;
 }
 .registration-box form button {
   height: 30px;
