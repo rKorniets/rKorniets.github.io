@@ -6,33 +6,32 @@
     <link rel="stylesheet" href="../static/log_in-out.css" type="text/css">
 </head>
 <body class="body">
+    <script type="text/javascript" src="/static/registration.js"></script>
     <div class="root">
         <header class="main-header">
                 <nav class="controls">
                     <ul class="l1">
-                        <a href="index.html" class="header-buttons">Головна</a>
-                        <a href="all-events.html" class="header-buttons">Події</a>
+                        <a href="/" class="header-buttons">Головна</a>
+                        <a href="/all_events" class="header-buttons">Події</a>
                         <a href="" class="header-buttons">Мої квитки</a>
                     </ul>
                 </nav>
                 <nav class="auth">
                     <ul class="l2">
-                        <a class="header-buttons" href="login.html">Логін</a>
-                        <a href="registration.html" class="header-buttons">Реєстрація</a>
+                        <a class="header-buttons" href="/signin">Логін</a>
+                        <a href="/signup" class="header-buttons">Реєстрація</a>
                     </ul>
                 </nav>
         </header>
         <div class="main-content">
             <div class="registration-box">
                 <h1>Реєстрація</h1>
-                <form action="registration.php" method="post">
+                <form action="" method="" onsubmit="return false">
                     <input type="text" name="login" placeholder="Логін" required>
                     <input type="password" name="password" placeholder="Пароль" required>
                     <input type="password" name="password_confirm" placeholder="Підтвердження паролю" required>
                     <input type="text" name="email" placeholder="Електронна пошта" required>
-                    <input type="text" name="phone" placeholder="Телефон" required>
-                    <input type="text" name="address" placeholder="Адреса" required>
-                    <button>Зареєструватися</button>
+                    <button onclick="register()">Зареєструватися</button>
                 </form>
 
             </div>

@@ -1,5 +1,5 @@
 from marshmallow import fields, validate
-from flask import Flask, request, jsonify, make_response
+from flask import Flask, request, jsonify, make_response, render_template, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 import bcrypt
@@ -98,21 +98,42 @@ def token_required(f):
             token = request.headers['Bearer']
 
         if not token:
-            return jsonify({'message': 'a valid token is missing'})
+            return make_response(jsonify({'message': 'a valid token is missing'}), 403)
+
         try:
-            data = jwt.decode(token, app.config['SECRET_KEY'])
+            data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=["HS256"])
             current_user = User.query.filter_by(username=data['username']).first()
         except:
-            return jsonify({'message': 'token is invalid'})
+            return make_response(jsonify({'message': 'token is invalid'}), 403)
 
         return f(current_user, *args, **kwargs)
     return decorator
 
 
-@app.route('/')
-def run_the_database():
-    print('Connected!')
-    return "It haven't crashed yet"
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('static', 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+
+@app.route('/', methods=['GET', 'POST'])
+def main_page():
+    """returning main html page"""
+    return render_template("index.html")
+
+
+@app.route('/signin', methods=['GET', 'POST'])
+def login_page():
+    return render_template("login.html")
+
+
+@app.route('/signup', methods=['GET', 'POST'])
+def registration_page():
+    return render_template("registration.html")
+
+
+@app.route('/all_events', methods=['GET', 'POST'])
+def all_events_page():
+    return render_template("all-events.html")
 
 
 @app.route('/User', methods=['POST'])
@@ -138,6 +159,12 @@ def create_user():
         return make_response(jsonify({"message": "Bad data supplied"}), 405)
 
 
+@app.route('/api/isLoggedIn', methods=['GET'])
+@token_required
+def is_logged_in(current_user):
+    return make_response('', 200)
+
+
 @app.route('/User/<username>', methods=['GET'])
 @token_required
 def get_user(current_user, username):
@@ -161,7 +188,7 @@ def get_users(current_user):
         return make_response(jsonify({"message": "Bad data supplied"}), 405)
 
 
-@app.route('/User/login', methods=['GET'])
+@app.route('/User/login', methods=['POST'])
 def login_user():
     auth = request.authorization
     if not auth or not auth.username or not auth.password:
@@ -174,7 +201,7 @@ def login_user():
         return make_response(jsonify({"message": "Invalid password."}), 403)
 
     token = jwt.encode({"username" : auth.username, "exp" : datetime.datetime.utcnow() + datetime.timedelta(minutes=10)}, app.config['SECRET_KEY'])
-    return jsonify({"token" : token.decode("UTF-8")})
+    return jsonify({"token" : token})
 
 
 @app.route('/User/logout', methods=['GET'])
