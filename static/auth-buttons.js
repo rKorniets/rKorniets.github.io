@@ -14,6 +14,25 @@ function getCookie(cname) {
   return "";
 }
 
+async function log_out() {
+    let token = getCookie('token');
+    let response = await fetch('/User/logout', {
+        method: 'GET',
+        headers: {
+            'Bearer': token
+        }
+    });
+
+    if (response.status == 200) {
+        document.cookie = "token=;";
+        alert("You have been logged out.");
+        window.location.href = "/";
+    }
+    else {
+        alert("Something went wrong.");
+    }
+}
+
 async function set_buttons(){
     let login_button = document.getElementById("login-button");
     let registration_button = document.getElementById("registration-button");
@@ -21,19 +40,21 @@ async function set_buttons(){
     const response = await fetch('/api/isLoggedIn', {
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json',
-            'Bearer': token
+            'Bearer': token,
+            'Content-Type': 'application/json'
         }
     });
-    if (!response.ok && token == '') {
+    if (!response.ok) {
         console.log('Unauthorized before')
     } else {
         console.log('Logged before!' + response)
         login_button.innerText = 'Мій акаунт'
         login_button.href = ''
         registration_button.innerText = 'Вийти'
-        registration_button.href = '/logout'
+        registration_button.removeAttribute('href');
+        registration_button.onclick = function(){log_out()};
     }
 }
 
 set_buttons();
+

@@ -121,7 +121,7 @@ def main_page():
     return render_template("index.html")
 
 
-@app.route('/signin', methods=['GET', 'POST'])
+@app.route('/signin', methods=['GET'])
 def login_page():
     return render_template("login.html")
 
