@@ -1,6 +1,6 @@
 async function login(){
-    let username = document.getElementById("username-form").value;
-    let password = document.getElementById("password-form").value;
+    const username = document.getElementById("username-form").value;
+    const password = document.getElementById("password-form").value;
     const url = '/User/login'
     const response = await fetch(url, {
         method: 'POST',
@@ -14,8 +14,8 @@ async function login(){
         console.log("Wrong credentials!")
     }
     else{
-        let json = await response.json();
-        let token = json.token;
+        const json = await response.json();
+        const token = json.token;
         console.log('Token received:' + json.token);
         document.cookie = 'token=' + token;
         window.open("/", "_self");

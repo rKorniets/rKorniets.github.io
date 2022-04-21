@@ -34,9 +34,9 @@ async function log_out() {
 }
 
 async function set_buttons(){
-    let login_button = document.getElementById("login-button");
-    let registration_button = document.getElementById("registration-button");
-    let token = getCookie('token');
+    const login_button = document.getElementById("login-button");
+    const registration_button = document.getElementById("registration-button");
+    const token = getCookie('token');
     const response = await fetch('/api/isLoggedIn', {
         method: 'GET',
         headers: {
