@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tickets</title>
+    <link rel="stylesheet" href="../static/main.css" type="text/css">
+</head>
+<body class="body">
+    <div class="root">
+        <header class="main-header">
+                <nav class="controls">
+                    <ul class="l1">
+                        <a href="/" class="header-buttons">Головна</a>
+                        <a href="/all_events" class="header-buttons">Події</a>
+                        <a href="" class="header-buttons">Мої квитки</a>
+                    </ul>
+                </nav>
+                <nav class="auth">
+                    <ul class="l2">
+                        <a class="header-buttons" id="login-button" href="/signin">Логін</a>
+                        <a class="header-buttons" id="registration-button" href="/signup">Реєстрація</a>
+                    </ul>
+                </nav>
+        </header>
+        <script type="text/javascript" src="/static/auth-buttons.js"></script>
+        <div class="main-content">
+            <div class="main-search">
+                <p>Подія, яку хочу знайти...</p>
+                <div>
+                    <form action="" id="search_form">
+                        <label for="search_by_name">Знайти подію:</label>
+                        <input type="text" id="search_by_name" name="search_by_name" value="Найкраща подія у світі">
+                        <input type="submit" id="submit-button" value="Знайти">
+                    </form>
+                </div>
+            </div>
+            <div class="main-title">
+                <div>
+                    <img src="../static/img/ticket.png" alt="Ticket logo" class="ticket-logo">
+                <p>Завжди на крок попереду - ми вдосконалюємо платіжні рішення та створюємо нововведення</p>
+                <p>Cервіс аналізує інформацію безпосередньо з сайтів організаторів, допомагає обрати найдешевші дні та підібрати найкращий за ціною варіант. Щоб скористатися сервісом, необхідно заповнити лише назву події. Сайт покаже більшість доступних подій із цінами. Обравши потрібний варіант, сайт автоматично перенаправить на сторінку купівлі, де одразу ж можна придбати квиток.</p>
+                </div>
+            </div>
+            </div>
+        <div class="under-content">
+
+        </div>
+
+        <footer>
+            <p class="footer-text">Функціонування сайту залишається загадкою навіть для розробника. Не дивуйтеся появі/зникненню квитків. Сподіваюся, платіжні дані будуть у безпеці.</p>
+        </footer>
+
+    </div>
+</body>
+</html>
