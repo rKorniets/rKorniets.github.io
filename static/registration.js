@@ -25,4 +25,9 @@ async function register(){
     if (response.ok){
         window.location.replace("/signin")
     }
+    else {
+        let json = await response.json();
+        let message = json.message;
+        alert(message);
+    }
 }

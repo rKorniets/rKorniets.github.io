@@ -10,6 +10,7 @@ async function login(){
         }
     });
     if (!response.ok){
+        alert("Wrong credentials!")
         console.log("Wrong credentials!")
     }
     else{
